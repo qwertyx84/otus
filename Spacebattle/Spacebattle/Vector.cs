@@ -15,7 +15,7 @@ namespace Spacebattle
         public Vector(IEnumerable<T> initialValues)
         {
             // Задача 1.
-            if (initialValues.Count()==0)
+            if (initialValues == null || !initialValues.Any())
                 throw new ArgumentException("Невозможно создать вектор из пустого перечисления");
 
             _values = initialValues.ToArray();
@@ -33,7 +33,7 @@ namespace Spacebattle
         public static implicit operator Vector<T>(T[] a)
         {
             //Задача 3
-            if (a.Length == 0)
+            if (a == null || a.Length == 0)
             {
                 throw new ArgumentException("Невозможно создать вектор из массива нулевой длины");
             }
