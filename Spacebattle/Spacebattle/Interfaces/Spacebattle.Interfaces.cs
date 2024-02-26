@@ -5,7 +5,7 @@
     {
         public int ObjectId { get; }
         public string ObjectName { get; }
-        bool Moving { get; }
+        public bool Moving { get; }
     }
     public interface ISpaceShip : IGameObject
     {
