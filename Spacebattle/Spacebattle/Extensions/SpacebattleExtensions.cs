@@ -2,7 +2,7 @@
 
 namespace Spacebattle.Extensions
 {
-    public static class SpaceshipExtensions
+    public static class SpacebattleExtensions
     {
         public static IEnumerable<ISpaceShip> GetSpaceshipsByPlayerId(this IEnumerable<ISpaceShip> spaceships, int playerId)
         {
