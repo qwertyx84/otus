@@ -5,7 +5,7 @@ namespace PluginExampleRandomError
 
 {
     /// <summary>
-    /// Правильный плагин c вероятностью успешной загрузки 80
+    /// Правильный плагин c вероятностью успешной загрузки 80 процентов
     /// </summary>
     public class PluginRnd_ErrorOver_80_Percent : IPlugin
     {
@@ -20,7 +20,7 @@ namespace PluginExampleRandomError
 
     }
     /// <summary>
-    /// Правильный плагин c вероятностью успешной загрузки 70
+    /// Правильный плагин c вероятностью успешной загрузки 70 процентов
     /// </summary>
     public class PluginRnd_ErrorOver_70_Percent : IPlugin
     {
@@ -35,7 +35,7 @@ namespace PluginExampleRandomError
 
     }
     /// <summary>
-    /// Правильный плагин c вероятностью успешной загрузки 60
+    /// Правильный плагин c вероятностью успешной загрузки 60 процентов
     /// </summary>
     public class PluginRnd_ErrorOver_60_Percent : IPlugin
     {
@@ -50,7 +50,7 @@ namespace PluginExampleRandomError
 
     }
     /// <summary>
-    /// Правильный плагин c вероятностью успешной загрузки 50
+    /// Правильный плагин c вероятностью успешной загрузки 50 процентов
     /// </summary>
     public class PluginRnd_ErrorOver_50_Percent : IPlugin
     {
