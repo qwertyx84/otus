@@ -2,7 +2,7 @@
 namespace PluginExampleBad
 {
     /// <summary>
-    /// Неправильный плагин
+    /// Неправильный плагин, не наследован от необходимого интерфейса
     /// </summary>
     public class PluginBad 
     {

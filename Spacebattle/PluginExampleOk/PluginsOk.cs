@@ -3,7 +3,7 @@
 namespace PluginExampleOk
 {
     /// <summary>
-    /// Правильный плагин
+    /// Правильный плагин который загружается всегда
     /// </summary>
     public class PluginOk : IPlugin
     {

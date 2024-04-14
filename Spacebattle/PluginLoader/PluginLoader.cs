@@ -4,28 +4,40 @@ using PluginInterfaces;
 
 namespace PluginLoader
 {
+    /// <summary>
+    /// Класс для многопоточного считывания из каталога палгинов и их загрузки
+    /// </summary>
     internal class PluginLoader
     {
         public int countIPlugins;
         public int countIPluginsLoaded;
-        public void WriteResult()
-        {
-            if (countIPlugins == countIPluginsLoaded)
-                Console.WriteLine($"Обнаружено и успешно загружено {countIPlugins} плагинов наследованных от необходимого интерфейса");
-            else
-                Console.WriteLine($"Обнаружено {countIPlugins} плагинов наследованных от необходимого интерфейса, из них уcпешно загружено {countIPluginsLoaded}. Ошибка в системе плагинов!");
-
-        }
-
         private readonly string pluginDirectory;
         private ConcurrentQueue<IPlugin> pluginQueue = new ConcurrentQueue<IPlugin>();
         private Boolean ScanPluginsEnd = false;
-
+        /// <summary>
+        /// Конструктор класса
+        /// </summary>
+        ///<param name="pluginDirectory">
+        ///Каталог загрузки плагинов
+        ///</param>
         public PluginLoader(string pluginDirectory)
         {
             this.pluginDirectory = pluginDirectory;
         }
+        /// <summary>
+        /// Вывод результата работы в консоль
+        /// </summary>
+        public void WriteResult()
+        {
+            if (countIPlugins == countIPluginsLoaded)
+                Console.WriteLine($"Обнаружено и успешно загружено {countIPlugins} плагинов, наследованных от необходимого интерфейса");
+            else
+                Console.WriteLine($"Обнаружено {countIPlugins} плагинов, наследованных от необходимого интерфейса, из них уcпешно загружено {countIPluginsLoaded}. Ошибка в системе плагинов!");
 
+        }
+        /// <summary>
+        /// Чтение плагинов из папки
+        /// </summary>
         public void ScanPlugins()
         {
             if (!Directory.Exists(pluginDirectory))
@@ -52,7 +64,9 @@ namespace PluginLoader
             }
             ScanPluginsEnd = true;
         }
-
+        /// <summary>
+        /// Загрузка плагинов из очереди
+        /// </summary>
         public void LoadPlugins()
         {
             var pluginQueueNextTry = new ConcurrentQueue<IPlugin>();

@@ -12,7 +12,7 @@ namespace PluginLoader
             Console.WriteLine($"Скопируйте файлы плагинов в каталог {pluginDirectory} и нажмите любую клавишу для загрузки плагинов");
             Console.ReadLine();
 
-            PluginLoader pluginLoader = new PluginLoader(pluginDirectory);
+            PluginLoader pluginLoader = new(pluginDirectory);
 
             Thread scanThread = new Thread(pluginLoader.ScanPlugins);
             Thread loadThread = new Thread(pluginLoader.LoadPlugins);
