@@ -6,7 +6,7 @@ namespace CommanderTests
     public class UnitTestRun
     {
         /// <summary>
-        // Тест, который проверяет, что после команды старт поток запущен
+        // вЂњРµСЃС‚, РєРѕС‚РѕСЂС‹Р№ РїСЂРѕРІРµСЂВ¤РµС‚, С‡С‚Рѕ РїРѕСЃР»Рµ РєРѕРјР°РЅРґС‹ СЃС‚Р°СЂС‚ РїРѕС‚РѕРє Р·Р°РїСѓС‰РµРЅ
         /// </summary>
         [Fact]
         public void CommandExecutor_StartThread()
@@ -24,7 +24,7 @@ namespace CommanderTests
             executor.StopExecutionSoft();
         }
         /// <summary>
-        // Тест, который проверяет, что после команды soft stop, поток завершается только после того, как все задачи закончились
+        // вЂњРµСЃС‚, РєРѕС‚РѕСЂС‹Р№ РїСЂРѕРІРµСЂВ¤РµС‚, С‡С‚Рѕ РїРѕСЃР»Рµ РєРѕРјР°РЅРґС‹ soft stop, РїРѕС‚РѕРє Р·Р°РІРµСЂС€Р°РµС‚СЃВ¤ С‚РѕР»СЊРєРѕ РїРѕСЃР»Рµ С‚РѕРіРѕ, РєР°Рє РІСЃРµ Р·Р°РґР°С‡Рё Р·Р°РєРѕРЅС‡РёР»РёСЃСЊ
         /// </summary>
         [Fact]
         public void CommandExecutor_StartThreadAndStopSoft()
@@ -43,7 +43,7 @@ namespace CommanderTests
            
         }
         /// <summary>
-        // Тест, который проверяет, что после команды hard stop, поток завершается
+        // вЂњРµСЃС‚, РєРѕС‚РѕСЂС‹Р№ РїСЂРѕРІРµСЂВ¤РµС‚, С‡С‚Рѕ РїРѕСЃР»Рµ РєРѕРјР°РЅРґС‹ hard stop, РїРѕС‚РѕРє Р·Р°РІРµСЂС€Р°РµС‚СЃВ¤
         /// </summary>
         [Fact]
         public void CommandExecutor_StartThreadAndStopHard()
@@ -66,7 +66,7 @@ namespace CommanderTests
     }
 
     /// <summary>
-    // Класс от интерфейса ICommand для тестирования с выводом сообщения в консоль и задержкой
+    // В Р»Р°СЃСЃ РѕС‚ РёРЅС‚РµСЂС„РµР№СЃР° ICommand РґР»В¤ С‚РµСЃС‚РёСЂРѕРІР°РЅРёВ¤ СЃ РІС‹РІРѕРґРѕРј СЃРѕРѕР±С‰РµРЅРёВ¤ РІ РєРѕРЅСЃРѕР»СЊ Рё Р·Р°РґРµСЂР¶РєРѕР№
     /// </summary>
     public class TestCommand : ICommand
     {
