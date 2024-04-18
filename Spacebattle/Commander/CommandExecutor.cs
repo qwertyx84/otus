@@ -17,9 +17,14 @@ namespace Commander
         /// <summary>
         // Конструктор класса
         /// </summary>
-        public CommandExecutor()
+        public CommandExecutor(Boolean startExecute = true)
         {
             executionThread = new Thread(ExecuteCommands);
+            if (startExecute)
+                StartExecute();
+        }
+        public void StartExecute()
+        {
             executionThread.Start();
         }
 

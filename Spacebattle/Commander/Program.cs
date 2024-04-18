@@ -23,8 +23,10 @@ internal class Program
         executor.EnqueueCommand(new StartCommand(() => Console.WriteLine("TestCommand After Stop")));
 
     }
-
-      public class TestCommand : ICommand
+    /// <summary>
+    // Класс от интерфейса ICommand для тестирования с выводом сообщения в консоль и задержкой
+    /// </summary>
+    public class TestCommand : ICommand
     {
         private string _message;
 
