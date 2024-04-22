@@ -17,7 +17,7 @@ class Program
             Console.WriteLine("Users:");
             while (await reader.ReadAsync())
             {
-                Console.WriteLine($"User ID: {reader.GetInt32(0)}, Username: {reader.GetString(1)}, Email: {reader.GetString(2)}");
+                Console.WriteLine($"User ID: {reader["user_id"]}, Username: {reader["username"]}, Email: {reader["email"]}");
             }
             reader.Close();
 
