@@ -1,0 +1,43 @@
+﻿CREATE TABLE users (
+    user_id SERIAL PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    email VARCHAR(50) UNIQUE NOT NULL
+);
+
+CREATE TABLE products (
+    product_id SERIAL PRIMARY KEY,
+    product_name VARCHAR(100) NOT NULL,
+    price NUMERIC(10, 2) NOT NULL
+);
+
+CREATE TABLE orders (
+    order_id SERIAL PRIMARY KEY,
+    user_id INT REFERENCES users(user_id),
+    product_id INT REFERENCES products(product_id),
+    order_date DATE NOT NULL
+);
+
+INSERT INTO users (username, email) VALUES ('Frodo', 'frodo@lord_of_ring.com');
+INSERT INTO users (username, email) VALUES ('Sam', 'sam@lord_of_ring.com');
+INSERT INTO users (username, email) VALUES ('Bilbo', 'bilbo@lord_of_ring.com');
+INSERT INTO users (username, email) VALUES ('Aragorn', 'aragorn@lord_of_ring.com');
+INSERT INTO users (username, email) VALUES ('Legolas', 'legolas@lord_of_ring.com');
+INSERT INTO users (username, email) VALUES ('Gandalf', 'gandalf@lord_of_ring.com');
+
+INSERT INTO products (product_name, price) VALUES ('Чай', 1200.00);
+INSERT INTO products (product_name, price) VALUES ('Вино', 50.00);
+INSERT INTO products (product_name, price) VALUES ('Трубочное зелье', 800.00);
+INSERT INTO products (product_name, price) VALUES ('Кофе', 800.00);
+
+INSERT INTO orders (user_id, product_id, order_date) VALUES (1, 1, '2024-04-20');
+INSERT INTO orders (user_id, product_id, order_date) VALUES (2, 4, '2024-04-20');
+INSERT INTO orders (user_id, product_id, order_date) VALUES (3, 1, '2024-04-21');
+INSERT INTO orders (user_id, product_id, order_date) VALUES (4, 3, '2024-04-21');
+INSERT INTO orders (user_id, product_id, order_date) VALUES (5, 4, '2024-04-22');
+INSERT INTO orders (user_id, product_id, order_date) VALUES (6, 3, '2024-04-22');
+
+
+select *
+from orders o
+ join users u on u.user_id=o.user_id
+ join products p on p.product_id=o.product_id
