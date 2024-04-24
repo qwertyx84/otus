@@ -28,7 +28,7 @@ namespace Shapes
     /// <summary>
     /// Класс Square, наследуемый от Shape.Rectangle
     /// </summary>
-    public class Square : Rectangle, ICloneable, IMyCloneable<Square>
+    public class Square : Rectangle
     {
         public int Side { get; set; }
 
